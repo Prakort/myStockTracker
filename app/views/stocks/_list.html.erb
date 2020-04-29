@@ -1,0 +1,33 @@
+<% if !@tracked_stocks.empty? %>
+<table class="table table-border table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Ticker</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @tracked_stocks.each do |stock| %>
+    <tr>
+      <th scope="row"><%= stock.ticker %></td>
+      <td><%= stock.name %></td>
+      <td><%= stock.last_price %></td>
+      <td><%= "Action Place" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<% else %>
+    <div class="row">
+      <div class="col-sm-9">
+        <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          <p>You account has no stock in the database.</p>
+        </div>
+      </div>
+    </div>
+<% end %>
