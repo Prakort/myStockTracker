@@ -12,12 +12,16 @@ class StocksController < ApplicationController
           #render profile.html.erb in views
           #render 'users/profile'
         else 
-          flash[:alert] = "Please enter a valid to search"
-          redirect_to portfolio_path
+          respond_to do |format|
+            flash.now[:alert] = "Please enter a valid to search"
+            format.js { render partial: 'users/result' }
+          end
         end
       else
-        flash[:alert] = "Please enter a symbol to search"
-        redirect_to portfolio_path
+        respond_to do |format|
+          flash.now[:alert] = "Please enter a symbol to search"
+          format.js { render partial: 'users/result' }
+        end
       end
     end
 end
