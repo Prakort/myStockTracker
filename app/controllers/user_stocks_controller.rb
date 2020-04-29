@@ -19,4 +19,5 @@ class UserStocksController < ApplicationController
     redirect_to portfolio_path
 
   end
+
 end

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'portfolio', to: 'users#profile'
   get 'search_stock', to: 'stocks#search'
+  get 'edit_user_registration', to: 'users#edit'
 
 end
